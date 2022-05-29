@@ -4,7 +4,7 @@ import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { BillsSchema } from './schemas/bills.schema';
 
-const url = 'http://192.168.1.250';
+const url = '192.168.1.250';
 
 @Module({
   imports: [
