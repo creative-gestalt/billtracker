@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  bt_front:
+    build: ./bt_front
+    container_name: bt_front
+    working_dir: /bt_front
+    ports:
+      - "8080:8080"
+    command: serve -s dist -l 8080
+    restart: unless-stopped
+
+  bt_back:
+    build: ./bt_back
+    container_name: bt_back
+    working_dir: /bt_back
+    ports:
+      - "3000:3000"
+    command: node dist/main
+    restart: unless-stopped
